@@ -6,7 +6,7 @@ export function SiteFooter() {
       aria-label="版权声明"
     >
       <p className="text-[11px] font-medium tracking-wide text-black/70 sm:text-xs">
-        (c) Oiiii studio · 永远相信真诚和善良
+        (c) Oiiii studio · 干点来劲的
       </p>
     </footer>
   );

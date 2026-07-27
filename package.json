@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "EXPORT=true next build",
     "start": "next start",
+    "preview": "EXPORT=true next build && npx --yes serve out -p 4173",
     "lint": "eslint"
   },
   "dependencies": {

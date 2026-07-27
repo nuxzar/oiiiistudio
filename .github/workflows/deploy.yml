@@ -32,6 +32,9 @@ jobs:
 
       - name: Build static site
         # Custom domain oiiii.studio → empty basePath (do not set PROJECT_PATH)
+        # EXPORT=true enables output:"export"; local `npm run dev` stays in server mode
+        env:
+          EXPORT: "true"
         run: npm run build
 
       - name: Upload Pages artifact
