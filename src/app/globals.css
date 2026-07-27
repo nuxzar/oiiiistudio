@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14282f;
+  --cream: #f6f1e7;
+  --paper: #ffffff;
+  --coral: #ff7a59;
+  --butter: #ffe08a;
+  --mint: #7ddfc5;
+  --sky: #6ec6ff;
+  --background: #ffffff;
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-coral: var(--coral);
+  --color-butter: var(--butter);
+  --color-mint: var(--mint);
+  --color-sky: var(--sky);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-body), "PingFang SC", "Noto Sans SC", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--coral);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-display), "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+@keyframes footer-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-marquee {
+  animation: footer-marquee 48s linear infinite;
+}
+
+/* Case modal scroller — hide chunky native bar, keep scroll */
+.case-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 40, 47, 0.25) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.case-modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.case-modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.case-modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(20, 40, 47, 0.22);
+}
+
+/* Case photo strip — horizontal snap, thin bar */
+.case-media-scroll {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.case-media-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes about-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.about-caret {
+  animation: about-caret 1s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-caret {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ABOUT panel — thin light bar on black, only when content overflows */
+.about-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+.about-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.about-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 12px;
+}
+
+.about-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+}
+
+.about-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
